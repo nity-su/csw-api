@@ -39,6 +39,7 @@ app.set("PORT", 8080);
 
 app.get("/", (req, res) => {
   res.send(process.env.USER);
+  console.log("root");
 });
 
 app.post(
