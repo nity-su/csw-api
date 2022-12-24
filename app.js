@@ -38,8 +38,8 @@ const midle = multer();
 app.set("PORT", 8080);
 
 app.get("/", (req, res) => {
-  res.send(process.env.USER);
-  console.log("root");
+  res.send("success");
+  console.log(process.env.USER);
 });
 
 app.post(
