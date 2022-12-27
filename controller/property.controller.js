@@ -10,7 +10,7 @@ exports.create = (req, res) => {
 
   const property = new Property({
     address: req.body.address,
-    address: req.body.name,
+    name: req.body.name,
   });
 
   Property.create(property, (err, result) => {
