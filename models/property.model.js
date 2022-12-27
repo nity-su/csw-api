@@ -2,6 +2,7 @@ const sql = require("./db.js");
 
 const Property = function (property) {
   this.address = property.address;
+  this.name = property.name;
 };
 
 Property.create = (newProperty, result) => {
