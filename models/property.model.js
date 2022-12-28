@@ -1,12 +1,12 @@
 const sql = require("./db.js");
 
 const Property = function (property) {
-  this.address = property.address;
-  this.name = property.name;
+  (this.address = property.address), (this.name = property.name);
 };
 
 Property.create = (newProperty, result) => {
-  console.log(newProperty);
+  console.log(__filename.slice(__dirname.length + 1), newProperty);
+
   sql.query("INSERT INTO NFT_FAKE_DATA SET ?", newProperty, (err, res) => {
     if (err) {
       console.log(err);
