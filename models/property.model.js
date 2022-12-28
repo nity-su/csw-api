@@ -30,4 +30,20 @@ Property.getAllAddress = (result) => {
   });
 };
 
+Property.getName = (name, result) => {
+  console.log("name", name);
+  sql.query(
+    `SELECT address FROM NFT_FAKE_DATA WHERE name = "${name}"`,
+    (err, res) => {
+      if (err) {
+        console.log(err);
+        result(err, null);
+        return;
+      }
+
+      result(null, res);
+    }
+  );
+};
+
 module.exports = Property;

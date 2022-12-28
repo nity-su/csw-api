@@ -35,3 +35,15 @@ exports.findAddressAll = (req, res) => {
     res.send(result);
   });
 };
+
+exports.getName = (req, res) => {
+  Property.getName(req.body.name, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send({
+        message: err.message,
+      });
+    }
+    res.send(result);
+  });
+};
