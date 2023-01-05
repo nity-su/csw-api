@@ -11,6 +11,7 @@ exports.create = (req, res) => {
   const property = new Property({
     address: req.body.address,
     name: req.body.name,
+    owner: req.body.owner,
   });
 
   Property.create(property, (err, result) => {
@@ -38,6 +39,18 @@ exports.findAddressAll = (req, res) => {
 
 exports.getName = (req, res) => {
   Property.getName(req.body.name, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send({
+        message: err.message,
+      });
+    }
+    res.send(result);
+  });
+};
+
+exports.getAddressOfowner = (req, res) => {
+  Property.getAddressOfowner(req.body.owner, (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).send({
