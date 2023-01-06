@@ -49,6 +49,7 @@ Property.getName = (name, result) => {
 };
 
 Property.getAddressOfowner = (owner, result) => {
+  console.log(owner);
   sql.query(
     `SELECT address FROM NFT_FAKE_DATA WHERE address = "${owner}"`,
     (err, res) => {
@@ -57,7 +58,6 @@ Property.getAddressOfowner = (owner, result) => {
         result(err, null);
         return;
       }
-
       result(null, res);
     }
   );

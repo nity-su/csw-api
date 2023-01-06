@@ -57,6 +57,7 @@ exports.getAddressOfowner = (req, res) => {
         message: err.message,
       });
     }
+
     res.send(result);
   });
 };
